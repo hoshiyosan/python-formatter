@@ -10,4 +10,5 @@ def cli(path: str):
   """
   subprocess.call(['autoflake', '-i', '-r', '--remove-all-unused-imports', '--exclude', '__init__.py', path])
   subprocess.call(['isort', '--profile=black', path])
-  subprocess.call(['black', path]) 
+  subprocess.call(['black', path])
+  subprocess.call(['pylint', '--errors-only', path])
